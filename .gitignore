@@ -1,0 +1,35 @@
+# Geral
+.DS_Store
+Thumbs.db
+*.log
+.env
+
+# Para o Backend
+backend/DigitalCircle.Backend/bin/
+backend/DigitalCircle.Backend/obj/
+backend/DigitalCircle.Backend/.vs/
+backend/DigitalCircle.Backend/*.user
+backend/DigitalCircle.Backend/*.suo
+backend/DigitalCircle.Backend/*.cache
+
+# Para o Frontend
+frontend/digitalcircle-frontend/node_modules/
+frontend/digitalcircle-frontend/dist/
+frontend/digitalcircle-frontend/.angular/
+
+# SQLite Database
+*.db
+*.db-shm
+*.db-wal
+
+# Ferramentas e IDEs
+.vscode/
+.idea/
+*.iml
+*.sublime-*
+
+# Arquivos temporários e gerados
+*.bak
+*.tmp
+*.swp
+*.~*

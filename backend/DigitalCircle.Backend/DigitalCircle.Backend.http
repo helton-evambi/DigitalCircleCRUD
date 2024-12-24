@@ -1,0 +1,6 @@
+@DigitalCircle.Backend_HostAddress = http://localhost:5299
+
+GET {{DigitalCircle.Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
