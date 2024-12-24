@@ -21,6 +21,7 @@ frontend/digitalcircle-frontend/.angular/
 *.db
 *.db-shm
 *.db-wal
+!backend/DigitalCircle.Backend/database.db
 
 # Ferramentas e IDEs
 .vscode/
