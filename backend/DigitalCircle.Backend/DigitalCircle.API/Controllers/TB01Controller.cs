@@ -27,10 +27,8 @@ public class TB01Controller : ControllerBase
     public async Task<ActionResult> Post(TB01AddDto tb01Dto)
     {
         var result = await _tb01Service.Add(tb01Dto);
-
         if (result.Status == "Success")
-            return Created("","Criado com sucesso");
-
+            return Created("", new { message = "Criado com sucesso" }); 
         return StatusCode(500);
     }
 
