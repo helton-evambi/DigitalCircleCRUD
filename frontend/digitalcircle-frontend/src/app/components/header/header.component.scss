@@ -1,0 +1,24 @@
+@import "../../../assets/colors.scss";
+
+header {
+  background-color: $primary;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    div {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+    }
+  }
+}
