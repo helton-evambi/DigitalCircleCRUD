@@ -1,0 +1,13 @@
+@if (visibility) {
+<div class="container">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="icon" (click)="close()">
+        <img src="../../../assets/icons/close.svg" width="30px" />
+      </div>
+    </div>
+    <h2>{{ title }}</h2>
+    <ng-content></ng-content>
+  </div>
+</div>
+}
