@@ -1,0 +1,76 @@
+<app-header />
+<main>
+  <div class="container">
+    <div class="form-group">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <app-text-area
+          label="Novo Registro"
+          inputName="inputText"
+          placeholder="Digite seu texto aqui..."
+          formControlName="colText"
+        />
+        <app-button class="primary" btn-text="Criar Registro" type="submit" />
+      </form>
+
+      <div class="table-container">
+        <app-table>
+          <th th>ID</th>
+          <th th>Texto</th>
+          <th th>Data</th>
+          <th th>Ações</th>
+          <ng-container tr *ngIf="tb01$ | async as tb01">
+            @for (tb01 of tb01; track $index) {
+            <tr tr>
+              <td>{{ tb01.id }}</td>
+              <td>
+                {{ tb01.colText }}
+              </td>
+              <td>
+                {{
+                  tb01.colDt
+                    ? (tb01.colDt | date : "dd/MM/yyyy HH:mm")
+                    : "Data não disponível"
+                }}
+              </td>
+              <td>
+                <div class="actions">
+                  <app-button
+                    variant="secondary"
+                    btn-text="Editar"
+                    (submit)="openModal(tb01.id!)"
+                  />
+                  <app-button
+                    variant="danger"
+                    btn-text="Excluir"
+                    (submit)="onDeleteSubmit(tb01.id!)"
+                  />
+                </div>
+              </td>
+            </tr>
+            }
+          </ng-container>
+        </app-table>
+        <ng-container *ngIf="tb01$ | async as tb01">
+          @if (tb01.length>0) {
+          <div class="pdf" (click)="downloadPdf(tb01)">
+            <img src="../../../assets/icons/pdf.svg" width="50px" />
+          </div>
+          }
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-modal [visibility]="modalVisibility" (closeModal)="closeModal()">
+  <form [formGroup]="registerForm" (ngSubmit)="onUpdateSubmit(idFoUpdate)">
+    <app-text-area
+      [label]="'Edição do Registro ' + idFoUpdate"
+      inputName="inputText"
+      placeholder="Digite seu texto aqui..."
+      formControlName="colText"
+    />
+
+    <app-button class="primary" btn-text="Editar Registro" type="submit" />
+  </form>
+</app-modal>

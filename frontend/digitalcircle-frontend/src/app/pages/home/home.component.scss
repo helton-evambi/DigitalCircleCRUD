@@ -1,0 +1,36 @@
+@import "../../../assets/colors.scss";
+
+main {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+
+  @media (max-width: 640px) {
+    padding: 0;
+  }
+
+  .container {
+    background: $card;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .form-group {
+    padding: 2rem;
+
+    @media (max-width: 640px) {
+      padding: 1rem;
+    }
+  }
+
+  .table-container {
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    .pdf {
+      cursor: pointer;
+      margin: 0 auto;
+    }
+  }
+}
