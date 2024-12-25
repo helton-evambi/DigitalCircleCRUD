@@ -1,0 +1,42 @@
+@import "../../../assets/colors.scss";
+
+button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  gap: 0.5rem;
+
+  &.primary {
+    background-color: $primary;
+    color: white;
+    &:hover {
+      background-color: $primary-hover;
+    }
+  }
+
+  &.secondary {
+    background-color: $primary-light;
+    color: $primary;
+    &:hover {
+      background-color: #fed7aa;
+    }
+  }
+  &.danger {
+    background-color: #ef4444;
+    color: white;
+    &:hover {
+      background-color: #dc2626;
+    }
+  }
+
+  @media (max-width: 640px) {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
