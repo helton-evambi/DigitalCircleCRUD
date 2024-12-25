@@ -10,21 +10,21 @@ import { environment } from '../../environments/environment';
 export class Tb01Service {
   baseUrl: string = environment.apiUrl + '/tb01';
 
-  constructor(private htpp: HttpClient) {}
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<TB01[]> {
-    return this.htpp.get<TB01[]>(this.baseUrl);
+    return this.http.get<TB01[]>(this.baseUrl);
   }
 
   create(tb01: TB01): Observable<any> {
-    return this.htpp.post(`${this.baseUrl}/create`, tb01);
+    return this.http.post(`${this.baseUrl}/create`, tb01);
   }
 
   delete(tb01: TB01): Observable<any> {
-    return this.htpp.post(`${this.baseUrl}/delete`, tb01);
+    return this.http.post(`${this.baseUrl}/delete`, tb01);
   }
 
   update(tb01: TB01): Observable<any> {
-    return this.htpp.post(`${this.baseUrl}/update`, tb01);
+    return this.http.post(`${this.baseUrl}/update`, tb01);
   }
 }
