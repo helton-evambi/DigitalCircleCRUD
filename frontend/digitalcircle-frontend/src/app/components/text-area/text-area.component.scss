@@ -1,0 +1,26 @@
+@import "../../../assets/colors.scss";
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: $text;
+}
+
+textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid $border;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  transition: all 0.2s;
+  resize: vertical;
+  min-height: 100px;
+  margin-bottom: 0.5rem;
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+  }
+}

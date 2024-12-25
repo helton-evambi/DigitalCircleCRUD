@@ -1,0 +1,9 @@
+<label [for]="inputName">{{ label }}</label>
+<div class="input-content">
+  <textarea
+    [id]="inputName"
+    [placeholder]="placeholder"
+    (input)="onInput($event)"
+    >{{ value }}</textarea
+  >
+</div>
